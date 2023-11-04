@@ -7,7 +7,7 @@ export const sessionsController = async (text, chatId) => {
     try {
         const data = await getSessions()
         data.forEach(element => {
-            bot.sendMessage(chatId, JSON.stringify(element))
+            bot.sendMessage(chatId, `Пользователь: ${element.user_name}.\nКоличество сессий: ${element.session_count}.\nСамый долгий запрос: ${element.max_query_duration}`)
         })
         return
     } catch (error) {

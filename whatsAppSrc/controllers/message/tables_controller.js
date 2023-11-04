@@ -1,5 +1,5 @@
 import { AxiosError } from "axios"
-import { bot } from "../../bot.js"
+import { client } from "../../bot.js"
 import { getSessions } from "../../services/sessions.js"
 import { getTables } from "../../services/tables.js"
 
@@ -16,14 +16,14 @@ export const tablesController = async (text, chatId) => {
     try {
         const data = await getTables()
         data.forEach(element => {
-            bot.sendMessage(chatId, `Название таблицы: ${element}`, options)
+            chatId.reply(element)
         })
         return
     } catch (error) {
         if (error instanceof AxiosError) {
-            return bot.sendMessage(chatId, JSON.stringify(error.message))
+            return chatId.reply(JSON.stringify(error.message))
         } else {
-            return bot.sendMessage(chatId, JSON.stringify(error.message))
+            return chatId.reply(JSON.stringify(error.message))
         }
     }
 }

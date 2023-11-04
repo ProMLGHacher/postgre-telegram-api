@@ -21,19 +21,19 @@ bot.setMyCommands([
     },
     {
         command: '/sessions',
-        description: 'Пуолучить сессии пользователей'
+        description: 'Получить сессии пользователей'
     },
     {
         command: '/queris',
-        description: 'Пуолучить статистику запросов'
+        description: 'Получить статистику запросов'
     },
     {
         command: '/hardware',
-        description: 'Пуолучить нагрузку ресурсов'
+        description: 'Получить нагрузку ресурсов'
     },
     {
         command: '/db_size',
-        description: 'Пуолучить размерность базы данных'
+        description: 'Получить размер базы данных'
     },
     {
         command: '/backup',
@@ -53,7 +53,7 @@ bot.setMyCommands([
     },
     {
         command: '/checkpoint',
-        description: 'Выполнить команду checkpoint и перезапускает базу'
+        description: 'Выполнить команду checkpoint и перезапустить базу'
     },
 ])
 

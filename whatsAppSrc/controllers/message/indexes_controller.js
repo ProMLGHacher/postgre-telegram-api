@@ -1,5 +1,5 @@
 import { AxiosError } from "axios"
-import { bot } from "../../bot.js"
+import { client } from "../../bot.js"
 import { getIndexesList } from "../../services/indexes_list.js"
 import { reindexDatabase } from "../../services/reindex_database.js"
 
@@ -15,14 +15,14 @@ export const indexesListController = async (text, chatId) => {
     try {
         const data = await getIndexesList()
         data.map((e) => {
-            bot.sendMessage(chatId, "Индексы: " + e, options)
+            chatId.reply(e)
         })
         return 
     } catch (error) {
         if (error instanceof AxiosError) {
-            return bot.sendMessage(chatId, JSON.stringify(error.message))
+            return chatId.reply(JSON.stringify(error.message))
         } else {
-            return bot.sendMessage(chatId, JSON.stringify(error.message))
+            return chatId.reply(JSON.stringify(error.message))
         }
     }
 }
@@ -30,12 +30,12 @@ export const indexesListController = async (text, chatId) => {
 export const reindexController = async (text, chatId) => {
     try {
         const data = await reindexDatabase()
-        return bot.sendMessage(chatId, 'Успешно')
+        return chatId.reply('Успешно')
     } catch (error) {
         if (error instanceof AxiosError) {
-            return bot.sendMessage(chatId, JSON.stringify(error.message))
+            return chatId.reply(JSON.stringify(error.message))
         } else {
-            return bot.sendMessage(chatId, JSON.stringify(error.message))
+            return chatId.reply(JSON.stringify(error.message))
         }
     }
 }
