@@ -1,5 +1,5 @@
 import { AxiosError } from "axios"
-import { bot } from "../../index.js"
+import { bot } from "../../bot.js"
 import { checkpoint } from "../../services/checkpoint.js"
 
 export const checkpointController = async (text, chatId) => {

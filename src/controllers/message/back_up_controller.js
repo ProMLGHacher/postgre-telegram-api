@@ -1,5 +1,5 @@
 import { AxiosError } from "axios"
-import { bot } from "../../index.js"
+import { bot } from "../../bot.js"
 import { getDbSize } from "../../services/db_size.js"
 import { createBackUp } from "../../services/create_backup.js"
 

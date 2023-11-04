@@ -1,5 +1,5 @@
 import { AxiosError } from "axios"
-import { bot } from "../../index.js"
+import { bot } from "../../bot.js"
 import { getDbSize } from "../../services/db_size.js"
 
 export const dbSizeController = async (text, chatId) => {

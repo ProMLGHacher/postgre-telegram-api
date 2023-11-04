@@ -1,5 +1,5 @@
 import { AxiosError } from "axios"
-import { bot } from "../../index.js"
+import { bot } from "../../bot.js"
 import { getIndexesList } from "../../services/indexes_list.js"
 import { reindexDatabase } from "../../services/reindex_database.js"
 
