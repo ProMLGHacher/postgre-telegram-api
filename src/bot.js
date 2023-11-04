@@ -63,7 +63,6 @@ export const start = () => {
         const chatId = msg.chat.id
         if (text === '/start') {
             users.add(chatId)
-            prevArr.push(1)
             console.log(prevArr);
             return bot.sendMessage(chatId, 'Привет!')
         }
