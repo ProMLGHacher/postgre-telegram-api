@@ -3,33 +3,26 @@ import { $api } from "../api.js"
 import { bot } from "../bot.js"
 
 const options = (err, sol) => {
-
-    console.log('ПИДОР ');
-    console.log([
+    const a = [
         ...sol.map((e) => {
             return [{
                 text: `${e}`,
-                callback_data: `/solution ${e}`
+                callback_data: `solution`
             }]
-        })
-    ]);
+        }),
+        [
+            {
+                text: 'Найти ошибку',
+                url: `https://www.google.com/search?q=${err.replaceAll('{', '').replaceAll('}', '').replaceAll('.', '').replaceAll(',', '').replaceAll('\'', '').replaceAll('"', '')}&ie=UTF-8`
+            }
+        ]
+    ]
+
+    console.log(a);
 
     return {
         reply_markup: JSON.stringify({
-            inline_keyboard: [
-                [
-                    {
-                        text: 'Найти ошибку',
-                        url: `https://www.google.com/search?q=${err.replaceAll('{', '').replaceAll('}', '').replaceAll('.', '').replaceAll(',', '').replaceAll('\'', '').replaceAll('"', '')}&ie=UTF-8`
-                    }
-                ],
-                [
-                    {
-                        text: 'Найти ошибку',
-                        url: `https://www.google.com/search?q=${err.replaceAll('{', '').replaceAll('}', '').replaceAll('.', '').replaceAll(',', '').replaceAll('\'', '').replaceAll('"', '')}&ie=UTF-8`
-                    }
-                ]
-            ]
+            inline_keyboard: a
         })
     }
 }

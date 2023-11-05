@@ -11,8 +11,6 @@ import { reindexIndexQueryController, reindexTableQueryController } from "./cont
 import { checkpointController } from "./controllers/message/checkpoint_controller.js"
 import { prevArr, users } from "./index.js"
 
-const token = '6559198159:AAGc51JszySdnxVvz183MJMg66vdhxhfCUk'
-
 export const client = new Client()
 
 client.initialize()
