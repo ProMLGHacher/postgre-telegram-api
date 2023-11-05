@@ -7,7 +7,8 @@ export const queriesController = async (text, chatId) => {
     try {
         const data = await getQueries()
         data.forEach(element => {
-            bot.sendMessage(chatId, JSON.stringify(element))
+            console.log(element);
+            bot.sendMessage(chatId, `Query запрос: ${element.queryText}\nКоличество запросов: ${element.queryCount}\nМасимальное время запроса: ${element.maxQueryDuration.replace('-', '')}`)
         })
         return
     } catch (error) {

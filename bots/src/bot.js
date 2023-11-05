@@ -6,7 +6,7 @@ import { dbSizeController } from "./controllers/message/db_size_controller.js"
 import { createBackUpController } from "./controllers/message/back_up_controller.js"
 import { indexesListController, reindexController } from "./controllers/message/indexes_controller.js"
 import { tablesController } from "./controllers/message/tables_controller.js"
-import { reindexIndexQueryController, reindexTableQueryController } from "./controllers/query/indexes_query_controller.js"
+import { deleteSessionController, reindexIndexQueryController, reindexTableQueryController } from "./controllers/query/indexes_query_controller.js"
 import { checkpointController } from "./controllers/message/checkpoint_controller.js"
 import { prevArr, users } from "./index.js"
 
@@ -107,6 +107,9 @@ export const start = () => {
         }
         if (data === 'reindex_table') {
             return await reindexTableQueryController(text, chatId, messageId)
+        }
+        if (data === 'delete_session') {
+            return await deleteSessionController(text, chatId, messageId)
         }
     })
 }

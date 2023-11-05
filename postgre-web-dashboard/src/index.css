@@ -1,0 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-condensed');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Proxima Nova Condensed', sans-serif;
+}
+
+body {
+  color: white;
+}
+
+:root {
+  --primary: rgba(172, 39, 39, 1);
+}
+
+.container {
+  width: 90%;
+  max-width: 1444px;
+  margin-inline: auto;
+}
